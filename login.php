@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
+    <?php
+        if (isset($_POST["login"])) {
+           $user_name = $_POST["username"];
+           $password = $_POST["password"];
+            require_once "database1.php";
+            $sql = "SELECT * FROM account WHERE username = '$user_name'";
+        }
+        ?>
     <div class="login">
         <h1>Faculty Review</h1>
         <form method="post" action="server_login">
