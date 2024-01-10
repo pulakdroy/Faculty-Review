@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="home.css">
     
     <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -44,6 +45,96 @@
             </ul>
         </div>
     </nav>
+
+
+    <section class="service">
+        <input type="text" id="searchInput" oninput="filterFaculty()" placeholder="Search by faculty name">
+        <div id="searchNote"></div>
+
+        <div class="faculty-container">
+            <!-- Faculty Profile 1 -->
+            <div class="faculty-profile" id="faculty1">
+                <a href="faculty1.php">
+                    <img src="images/Professor-Kaykobad.png" alt="Faculty 1">
+                    <h2>Dr. Mohammad Kaykobad</h2>
+                    <p>Distinguished Professor</p>
+                    <div class="thesis-availability">
+                        <div class="green-light"></div>
+                        <p>Accepting</p>
+                    </div>
+                </a>
+            </div>
+        
+            <!-- Faculty Profile 2 -->
+            <div class="faculty-profile" id="faculty2">
+                <a href="faculty2.php">
+                    <img src="images/Dr.-Md.-Khalilur-Rhaman.jpg" alt="Faculty 2">
+                    <h2>Dr. Md. Khalilur Rahman</h2>
+                    <p>Professor</p>
+                    <div class="thesis-availability">
+                        <div class="green-light"></div>
+                        <p>Accepting</p>
+                    </div>
+                </a>
+            </div>
+        
+            <!-- Faculty Profile 3 -->
+            <div class="faculty-profile" id="faculty3">
+                <a href="faculty3.php">
+                    <img src="images/amitabhaSir.jpg" alt="Faculty 3">
+                    <h2>Dr. Amitahba Chakrabarty</h2>
+                    <p>Professor</p>
+                    <div class="thesis-availability">
+                        <div class="red-light"></div>
+                        <p>Not Accepting</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Faculty Profile 4 -->
+            <div class="faculty-profile" id="faculty4">
+                <a href="faculty4.php">
+                    <img src="images/mihjpg.jpg" alt="Faculty 4">
+                    <h2>Dr. Muhammad Iqbal Hossain</h2>
+                    <p>Associate Professor</p>
+                    <div class="thesis-availability">
+                        <div class="green-light"></div>
+                        <p>Accepting</p>
+                    </div>
+                </a>
+            </div>
+        
+            <!-- Faculty Profile 5 -->
+            <div class="faculty-profile" id="faculty5">
+                <a href="faculty5.php">
+                    <img src="images/Tawhid.jpg" alt="Faculty 5">
+                    <h2>Tawhid Anwar</h2>
+                    <p>Senior Lecturer</p>
+                    <div class="thesis-availability">
+                        <div class="red-light"></div>
+                        <p>Not Accepting</p>
+                    </div>
+                </a>
+            </div>
+
+             <!-- Faculty Profile 6 -->
+             <div class="faculty-profile" id="faculty6">
+                <a href="faculty6.php">
+                    <img src="images/nishat_nayla.jpg" alt="Faculty 6">
+                    <h2>Nishat Nayla</h2>
+                    <p>C. Lecturer</p>
+                    <div class="thesis-availability">
+                        <div class="green-light"></div>
+                        <p>Accepting</p>
+                    </div>
+                </a>
+            </div>
+        
+        
+        </div>
+
+
+    </section>
 
     <!-- Bootstrap JS and jQuery scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

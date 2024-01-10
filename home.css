@@ -1,0 +1,177 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height:45px;
+    background-color:rgb(62, 59, 75) ;
+}
+.navbar h2{
+     color: rgb(240, 249, 248);
+     font-size: 30px;
+     font-weight: 700;
+     padding: 0px 20px;
+}
+.navmenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:1000;
+}
+.navmenu li{
+    display: inline-block;
+}
+.navmenu li a{
+    color: rgb(226, 234, 234);
+    margin-right: 20px;
+    padding:8px 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.header {
+    width: 100%;
+    height: 46px;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(images/supervisor-pic.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+ }
+ .nav-links ul li:hover::after{
+     width: 100%;
+ }
+
+ body{
+    background-color: rgb(92, 101, 109);
+ }
+ .text-box {
+     width: 90%;
+     color: #fff;
+     position: absolute;
+     top: 20%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     text-align: center;
+ }
+ .text-box h1{
+     font-size: 55px;
+ }
+ .text-box h3{
+     margin: 150px 0 40px;
+     font-size: 20px;
+     color:rgb(10, 10, 93);
+     text-align: center;
+ }
+ nav .fa{
+    display: none;
+}
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 12px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+}
+.service {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+#searchInput {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 25%;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.faculty-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.thesis-availability {
+    display: flex;
+    align-items: center;
+}
+.green-light {
+    width: 15px;
+    height: 15px;
+    background-color: #4CAF50; /* Green color */
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.red-light {
+    width: 15px;
+    height: 15px;
+    background-color: #f44336; 
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.faculty-profile {
+    flex: 0 0 calc(25% - 20px); /* Each profile takes 25% width with some margin */
+    margin: 10px;
+    border: 1px solid #3498db;
+    border-radius: 8px;
+    background-color: #ecf0f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+.faculty-profile:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+h2 {
+    color: #2e86de;
+    margin-bottom: 10px;
+}
+p {
+    margin-bottom: 15px;
+    color: #555;
+}
+strong {
+    color: #2e86de;
+}
+img {
+    max-width: 100%;
+    height: 25vh;
+}
+.faculty-profile a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
+.faculty-profile a:hover {
+    text-decoration: none;
+}
