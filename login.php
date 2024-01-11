@@ -54,7 +54,7 @@ if (isset($_SESSION["user"])) {
             </div>     
         </form>
 
-        <p>Forget password? <a href="">Forget password</a></p>
+        <p>Forget password? <a href="forgetpassword.html">Forget password</a></p>
         <p>Or</p>
         <p>Don't have an account? <a href="createaccount.php">Create account</a></p>
     </div>
