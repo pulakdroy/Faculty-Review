@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION["user"])) {
+   header("Location: index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,27 +14,28 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <div class="login">
+    <div class="container">
         <h1>Faculty Review</h1>
 
-
-    <?php
+        <?php
         if (isset($_POST["login"])) {
-           $Username = $_POST["username"];
-           $Password = $_POST["password"];
+           $username = $_POST["username"];
+           $password = $_POST["password"];
             require_once "database1.php";
-            $sql = "SELECT * FROM account WHERE Username = '$Username'";
-            $result=mysqli_query($conn, $sql);
-            $user=mysqli_fetch_array($result, MYSQLI_ASSOC);//to access to the column of database
-            if ($user){
-                if (password_verify($Password, $user["Password"])){
-                    header("Location: index.php");//redirect to home page
+            $sql = "SELECT * FROM account WHERE Username = '$username'";
+            $result = mysqli_query($conn, $sql);
+            $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            if ($user) {
+                if (password_verify($password, $user["Password"])) {
+                    session_start();
+                    $_SESSION["user"] = "yes";
+                    header("Location: index.php");
                     die();
                 }else{
-                    echo"<div class= 'alert alert-danger'> password dose not match</div>";
+                    echo "<div class='alert alert-danger'>Password does not match</div>";
                 }
             }else{
-                echo"<div class= 'alert alert-danger'> username dose not match</div>";
+                echo "<div class='alert alert-danger'>Username does not match</div>";
             }
         }
         ?>
@@ -48,7 +56,7 @@
 
         <p>Forget password? <a href="">Forget password</a></p>
         <p>Or</p>
-        <p>Don't have an account? <a href="createaccount.html">Create account</a></p>
+        <p>Don't have an account? <a href="createaccount.php">Create account</a></p>
     </div>
 </body>
 </html>
