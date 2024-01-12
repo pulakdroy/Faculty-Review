@@ -9,6 +9,22 @@ header {
     background-color: #3498db;
     color: #fff;
 }
+summary {
+    background-color: #7fa6d8;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  /* Style for the content inside the details */
+  details > div {
+    background-color: #c6dbe3;
+    padding: 10px;
+  }
+  details {
+    margin-bottom: 10px;
+  }
+
 
 .faculty-info {
     max-width: 60%;
