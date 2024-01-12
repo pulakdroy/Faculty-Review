@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="faculty6.css">
+    <title>Nishat Nayla</title>
+    
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="home.html">
+            <img src="images/logo.png" width="60" height="60" class="d-inline-block align-top" alt="">
+            Faculty Review
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Sign in</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Feedback</a>
+                        <a class="dropdown-item" href="#">Donate</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <!-- Faculty Picture -->
+        <img src="images/nishat_nayla.jpg" alt="Nishat Nayla">
+    
+        <!-- Faculty Information -->
+        <div class="faculty-info">
+            <h1>Nishat Nayla</h1>
+            <p>Position: C. Lecturer</p>
+            <p>Email: </p>
+            <p>Address: CSE, Department
+                </p>
+        </div>
+    
+ 
+    </header>
+    
+    <!-- Faculty Profile Content Section -->
+    <section class="profile-content">
+      
+        <details>
+            <summary>CSE110</summary>
+            <div class="reviews-container" id="CSE110-reviews">
+                <!-- Reviews will be dynamically added here -->
+            </div>
+            <div class="filter-options">
+                <label for="filterSelect">Filter by:</label>
+                <select id="filterSelect" onchange="filterReviews('CSE110')">
+                    <option value="new">Newest</option>
+                    <option value="old">Oldest</option>
+                    <option value="good">Good Reviews</option>
+                    <option value="bad">Bad Reviews</option>
+                </select>
+            </div>
+        </details>
+
+        <details>
+            <summary>CSE220</summary>
+            <div class="reviews-container" id="CSE220-reviews">
+                <!-- Reviews will be dynamically added here -->
+            </div>
+            <div class="filter-options">
+                <label for="filterSelect">Filter by:</label>
+                <select id="filterSelect" onchange="filterReviews('CSE220')">
+                    <option value="new">Newest</option>
+                    <option value="old">Oldest</option>
+                    <option value="good">Good Reviews</option>
+                    <option value="bad">Bad Reviews</option>
+                </select>
+            </div>
+        </details>
+
+        <details>
+            <summary>CSE370</summary>
+            <div class="reviews-container" id="CSE370-reviews">
+                <!-- Reviews will be dynamically added here -->
+            </div>
+            <div class="filter-options">
+                <label for="filterSelect">Filter by:</label>
+                <select id="filterSelect" onchange="filterReviews('CSE370')">
+                    <option value="new">Newest</option>
+                    <option value="old">Oldest</option>
+                    <option value="good">Good Reviews</option>
+                    <option value="bad">Bad Reviews</option>
+                </select>
+            </div>
+        </details>
+       
+    </section>
+
+    <!-- Bootstrap JS and jQuery scripts -->
+    <script>
+        // Function to add reviews dynamically
+        function addReview(course, review, date, rating) {
+            const reviewsContainer = document.getElementById(course + '-reviews');
+            const reviewDiv = document.createElement('div');
+            reviewDiv.innerHTML = `<p>Date: ${date}</p><p>Rating: ${rating}</p><p>${review}</p>`;
+            reviewsContainer.appendChild(reviewDiv);
+        }
+
+        // Function to filter reviews based on selected option
+        function filterReviews(course) {
+            const reviewsContainer = document.getElementById(course + '-reviews');
+            const filterSelect = document.getElementById('filterSelect');
+            const reviews = reviewsContainer.children;
+
+            // Convert HTMLCollection to array for easier manipulation
+            const reviewsArray = Array.from(reviews);
+
+            switch (filterSelect.value) {
+                case 'new':
+                    reviewsArray.sort((a, b) => new Date(b.querySelector('p:first-child').innerText.split(': ')[1]) - new Date(a.querySelector('p:first-child').innerText.split(': ')[1]));
+                    break;
+                case 'old':
+                    reviewsArray.sort((a, b) => new Date(a.querySelector('p:first-child').innerText.split(': ')[1]) - new Date(b.querySelector('p:first-child').innerText.split(': ')[1]));
+                    break;
+                case 'good':
+                    reviewsArray.sort((a, b) => b.querySelector('p:nth-child(2)').innerText.split(': ')[1] - a.querySelector('p:nth-child(2)').innerText.split(': ')[1]);
+                    break;
+                case 'bad':
+                    reviewsArray.sort((a, b) => a.querySelector('p:nth-child(2)').innerText.split(': ')[1] - b.querySelector('p:nth-child(2)').innerText.split(': ')[1]);
+                    break;
+            }
+
+            // Clear existing reviews
+            reviewsContainer.innerHTML = '';
+
+            // Append sorted reviews back to the container
+            reviewsArray.forEach(review => reviewsContainer.appendChild(review));
+        }
+
+        // Sample usage
+        addReview('CSE370', 'Great course!', '2024-01-13', 5);
+        addReview('CSE370', 'Not satisfied with the teaching style.', '2024-01-10', 2);
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
