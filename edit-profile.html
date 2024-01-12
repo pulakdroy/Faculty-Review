@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="edit-profile.css">
+    <title>Edit Profile</title>
+    
+    <!-- Include any necessary stylesheets or links here -->
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h2>Edit Profile</h2>
+        <form>
+            <!-- Add form fields for editing profile information -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="studentId">Student ID:</label>
+                <input type="text" class="form-control" id="studentId" placeholder="Enter your student ID">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password">
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password">
+            </div>
+
+            <!-- Add more form fields as needed -->
+
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+
+    <!-- Include any necessary scripts or links to external scripts here -->
+    <script>
+        document.getElementById('editProfileForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            // Add logic to save changes (e.g., send data to server)
+
+            // Redirect to the profile page after successful submission
+            window.location.href = 'profile.html';
+        });
+    </script>
+
+    
+</body>
+</html>
