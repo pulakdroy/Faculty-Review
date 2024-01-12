@@ -1,0 +1,52 @@
+/* Custom CSS */
+
+/* Navbar styling */
+.navbar {
+    background-color: #343a40; /* Dark background color */
+}
+
+.navbar-brand {
+    color: #ffffff !important; /* White text color */
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important; /* White text color for navbar links */
+}
+
+/* Container styling */
+.container {
+    padding-top: 20px;
+}
+
+/* Card styling */
+.card {
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for card */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Profile image styling */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Edit and Delete buttons styling */
+.btn-primary {
+    margin-right: 10px;
+}
+
+.btn-danger {
+    margin-left: 10px;
+}
+
+/* Reviews section styling */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Add more custom styling as needed */

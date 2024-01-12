@@ -41,19 +41,7 @@ img {
     /* border-radius: 50%; For circular images */
 }
 
-/* Green Light Icon */
-.thesis-availability {
-    display: flex;
-    align-items: center;
-}
 
-.green-light {
-    width: 15px;
-    height: 15px;
-    background-color: #4CAF50; /* Green color */
-    border-radius: 50%;
-    margin-right: 10px;
-}
 
 /* Faculty Profile Content Section */
 .profile-content {
