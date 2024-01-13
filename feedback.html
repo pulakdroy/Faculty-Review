@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="faculty1.css">
+    <link rel="stylesheet" href="feedback.css">
     <title>Feedback</title>
     
     <!-- Bootstrap CSS link -->
@@ -37,7 +37,7 @@
                         More
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Feedback</a>
+                        <a class="dropdown-item" href="feedback.html">Feedback</a>
                         <a class="dropdown-item" href="#">Donate</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
@@ -46,13 +46,37 @@
         </div>
     </nav>
 
+    <div class="container">
+        <?php
+        // Check for the success parameter
+        $success = isset($_GET['success']) ? $_GET['success'] : false;
+        
+        // Display "Thank you" message if success parameter is true
+        if ($success):
+        ?>
+        <div class="alert alert-success mt-3" role="alert">
+            Thank you for your feedback!
+        </div>
+        <?php endif; ?>
 
-    <form method="POST" action="process_feedback.php">
-        <input type="text" name="name" placeholder="Your Name">
-        <input type="email" name="email" placeholder="Your Email">
-        <textarea name="feedback" placeholder="Write your feedback here"></textarea>
-        <input type="submit" value="Submit Feedback">
-    </form>
+        <form method="POST" action="process_feedback.php">
+            <!-- Check if the user is logged in -->
+            <?php if ($userLoggedIn): ?>
+                <!-- If logged in, no need to ask for name or email -->
+                <input type="hidden" name="name" value="<?php echo htmlspecialchars($loggedInUserName); ?>">
+                <input type="hidden" name="email" value="<?php echo htmlspecialchars($loggedInUserEmail); ?>">
+            <?php else: ?>
+                <!-- If not logged in, ask for name and email -->
+                <input type="text" name="name" placeholder="Your Name">
+                <input type="email" name="email" placeholder="Your Email">
+            <?php endif; ?>
+            <!-- Textarea for feedback -->
+            <textarea name="feedback" placeholder="Write your feedback here"></textarea>
+            <!-- Submit button -->
+            <input type="submit" value="Submit Feedback">
+        </form>
+    </div>
+    
 
 
 </body>
